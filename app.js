@@ -20,7 +20,7 @@ var commentRoutes    = require("./routes/comments"),
     babaRoutes = require("./routes/babas"),
     indexRoutes      = require("./routes/index")
     
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect("mongodb://localhost/babamanager");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
@@ -56,6 +56,6 @@ app.use("/", indexRoutes);
 app.use("/babas", babaRoutes);
 app.use("/babas/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT, process.env.IP, function(){
-   console.log("The YelpCamp Server Has Started!");
+app.listen(3000, process.env.IP, function(){
+   console.log("The Baba Server Has Started!");
 });
