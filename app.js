@@ -6,7 +6,7 @@ var express     = require("express"),
     cookieParser = require("cookie-parser"),
     LocalStrategy = require("passport-local"),
     flash        = require("connect-flash"),
-    Campground  = require("./models/campground"),
+    Baba  = require("./models/baba"),
     Comment     = require("./models/comment"),
     User        = require("./models/user"),
     session = require("express-session"),
@@ -17,7 +17,7 @@ require('dotenv').load();
 
 //requiring routes
 var commentRoutes    = require("./routes/comments"),
-    campgroundRoutes = require("./routes/campgrounds"),
+    babaRoutes = require("./routes/babas"),
     indexRoutes      = require("./routes/index")
     
 mongoose.connect(process.env.MONGODB_URI);
@@ -53,8 +53,8 @@ app.use(function(req, res, next){
 
 
 app.use("/", indexRoutes);
-app.use("/campgrounds", campgroundRoutes);
-app.use("/campgrounds/:id/comments", commentRoutes);
+app.use("/babas", babaRoutes);
+app.use("/babas/:id/comments", commentRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function(){
    console.log("The YelpCamp Server Has Started!");

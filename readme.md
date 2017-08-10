@@ -1,3 +1,3 @@
-# YelpCamp
+# Baba Manager
 
-### Refactored by Ian Schoonover
+### customized by jorgevilasboas

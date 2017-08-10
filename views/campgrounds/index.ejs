@@ -3,30 +3,30 @@
      <header class="jumbotron">
          <div class="container">
              <h1><span class="glyphicon glyphicon-tent"></span> Welcome To YelpCamp!</h1>
-             <p>View our hand-picked campgrounds from all over the world</p>
+             <p>View our hand-picked babas from all over the world</p>
              <p>
-                <a class="btn btn-primary btn-lg" href="/campgrounds/new">Add New Campground</a>
+                <a class="btn btn-primary btn-lg" href="/babas/new">Add New Baba</a>
              </p>
               <p>
-              <form action="/campgrounds" method="GET" class="form-inline" id="campground-search">
+              <form action="/babas" method="GET" class="form-inline" id="baba-search">
                 <div class="form-group">
-                  <input type="text" name="search" placeholder="Campground search..." class="form-control">
+                  <input type="text" name="search" placeholder="Baba search..." class="form-control">
                 </div>
               </form>
              </p>
          </div>
      </header>
      
-     <div class="row text-center flex-wrap" id="campground-grid">
-        <% campgrounds.forEach(function(campground){ %>
+     <div class="row text-center flex-wrap" id="baba-grid">
+        <% babas.forEach(function(baba){ %>
             <div class="col-md-3 col-sm-6">
                 <div class="thumbnail">
-                   <img src="<%= campground.image %>">
+                   <img src="<%= baba.image %>">
                    <div class="caption">
-                       <h4><%= campground.name %></h4>
+                       <h4><%= baba.name %></h4>
                    </div>
                    <p>
-                       <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary">More Info</a>
+                       <a href="/babas/<%= baba._id %>" class="btn btn-primary">More Info</a>
                    </p>
                 </div>
             </div>
