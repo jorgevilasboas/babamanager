@@ -17,6 +17,7 @@ require('dotenv').load();
 
 //requiring routes
 var commentRoutes    = require("./routes/comments"),
+    playerRoutes    = require("./routes/players"),
     babaRoutes = require("./routes/babas"),
     indexRoutes      = require("./routes/index")
     
@@ -55,6 +56,8 @@ app.use(function(req, res, next){
 app.use("/", indexRoutes);
 app.use("/babas", babaRoutes);
 app.use("/babas/:id/comments", commentRoutes);
+app.use("/babas/:id/players", playerRoutes);
+
 
 app.listen(3000, process.env.IP, function(){
    console.log("The Baba Server Has Started!");
